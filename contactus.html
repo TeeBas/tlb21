@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <html>
 <head>
 <title>The Learning Bags</title>
-    <link rel="shortcut icon" type="images/ico" href="images/favicon1.ico">
+  <link rel="shortcut icon" type="images/ico" href="images/favicon.ico">
     <meta charset="UFT-8">
     <meta name="description" content="thelearningbags">
     <meta name="keywords" content="learning">
@@ -166,42 +165,51 @@ body {margin:10px;
 }
 
 .column {
+  float: left;
+  width: 100%;
   background-color: #62b6cb;
-  padding: 20px;
+  padding: 25px;
   margin: 10px;
   height: 190px;
   text-align: center;
 }
 
-.fa {
-  font-size: 30px;
-  width: 60px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
- }
+.row {
+  margin: 10px -10px;
+} 
+
 
 .fa:hover {
     opacity: 0.7;
 }
 
-.fa-whatsapp {
-  background: #00b489;
-  color: white;
-  padding: 10px 10px;
-}
-
 .fa-facebook {
   background: #3B5998;
   color: white;
-  padding: 10px 10px;
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
 }
 
 .fa-instagram {
   background: #430297;
   color: white;
-  padding: 10px 10px;
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+/* Clear floats after the column */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Footer */
@@ -296,8 +304,7 @@ body {margin:10px;
 </style>
 </head>
 <body>
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="topnav">
   <a href="index.html">Home</a>
   <a href="aboutus.html">About Us</a>
@@ -334,34 +341,37 @@ body {margin:10px;
 
 <div style="padding:9px;"> 
 <div class="container">
+
 <h1>Contact Us</h1>
 
 <h3>Click on the links for more info.
 Fill out the form to join our group.</h3>
+<div class="row">
 
   <div class="column">
 <p>Social Media</p>
-<a target="blank" href="https://www.facebook.com/profile.php?id=100064107366514&mibextid=ZbWKwL" class="fa fa-facebook"></a>&nbsp&nbsp
-<a target="blank" href="https://wa.me/18683622685" <a target_"blank" href="https://wa.me/18683622685" aria-label="Chat on WhatsApp">
-<img alt="Chat on WhatsApp" img src="images/WhatsAppButtonGreenSmall.png" height="40px" width="14%"></a></a>&nbsp&nbsp
-<a target="blank" href="https://instagram.com/cloth_craft_crochet?igshid=ZDdkNTZiNTM=" class="fa fa-instagram"></a>&nbsp&nbsp&nbsp
+<a target="blank" href="https://www.facebook.com/profile.php?id=100064107366514&mibextid=ZbWKwL" class="fa fa-facebook" style-width="60px" height="60px"></a>&nbsp&nbsp
+<a target="blank" href="https://instagram.com/cloth_craft_crochet?igshid=ZDdkNTZiNTM=" class="fa fa-instagram"></a>
 </div>
 
 <div class="column">
 <p><a href="tel:+868-362-2685">Call Us</a></p>
 <p>(868)362-2685</p>
+<a target="blank" href="https://wa.me/18683622685" <a target_"blank" href="https://wa.me/18683622685" aria-label="Chat on WhatsApp">
+<img alt="Chat on WhatsApp" img src="images/WhatsAppButtonGreenSmall.png" height="50px" width="200px"></a></a>
 </div>
 
 <div class="column">
 <p><a href="mailto:thorabastaldo@gmail.com">Email Us</a></p>
 <p>thorabastaldo@gmail.com</p>
 </div>
-
+</div>
+ 
   <h2>Fill out the form to join our support group.</h2>
   <a  target="_blank" href="form.html">Link to form </a>
 </div>
 </div>
-</div>
+
 
 <div class="footer">
 <h4> &nbsp; The Learning Bags <i class="fa fa-copyright" style="font-size:10px"></i> &nbsp; <img src="images/logo.jpg" alt="logoimage" width="35px" height:"35px;">  &nbsp; All Rights Reserved &nbsp; &nbsp;
