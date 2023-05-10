@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<title>The Learning Bags</title>
+  <link rel="shortcut icon" type="images/ico" href="images/favicon.ico">
+    <meta charset="UFT-8">
+    <meta name="description" content="thelearningbags">
+    <meta name="keywords" content="learning">
+    <meta name="author" content="ThoraBastaldo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;  border-radius: 5px;
+}
+
+body {margin:10px;
+      font-family:"Segoe Print", "Century Gothic"; 
+      background-color:#9bf6ff;}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(11, 134, 191);
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.active {
+  background-color: white;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/*Style the dropdown menu buttons */
+.products {
+  float: left;
+  overflow: hidden;
+}
+
+.products .productsbtn {
+  font-size: 22px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.products-content {
+  display: none;
+  position: absolute;
+  background-color: #caffbf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(122, 171, 196, 0.3);
+  z-index: 1;
+}
+
+.products-content a {
+  float: none;
+  color:  black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .products:hover .productsbtn {
+  background-color:  #9bf6ff;
+  color: black;
+}
+
+.products-content a:hover {
+  background-color: green;
+  color: black;
+}
+
+.products:hover .products-content {
+  display: block;
+}
+
+.services {
+  float: left;
+  overflow: hidden;
+}
+
+.services .servicesbtn {
+  font-size: 22px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.services-content {
+  display: none;
+  position: absolute;
+  background-color: #fdffb6;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(122, 171, 196, 0.3);
+  z-index: 1;
+}
+
+.services-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .services:hover .servicesbtn {
+  background-color: #9bf6ff;
+  color: black;
+}
+
+.services-content a:hover {
+  background-color: gold;
+  color:  black;
+}
+
+.services:hover .services-content {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.centered {
+  position: absolute;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: tan;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 80%;
+  height:100%;
+  text-align: center;
+  background-color: #ffadad;
+  padding: 5px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  height: 90%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+} 
+
+div.container{
+  margin: 5px;
+  border: none;
+  float: left;
+  width: 100%;
+  height: 10%;
+  position: relative;
+}
+
+div.gallery {
+  margin: 15px;
+  border: none;
+  float: left;
+  width: 100px;
+  height: 10%
+}
+
+/* Dashed border */
+hr.dashed {
+  border-top: 5px dashed #bbb;
+}
+
+.p {
+  padding: 5px;
+  text-align: center
+}
+
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #0b86bf;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+  topnav a:not(:first-child), .products .services .productsbtn .servicesbtn {
+    display: none;
+  .topnav a.icon {
+    float: none;
+    width: 100%;
+  }
+}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .products {float: none;}
+  .topnav.responsive .products-content {position: relative;}
+  .topnav.responsive .products .productsbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive .services {float: none;}
+  .topnav.responsive .services-content {position: relative;}
+  .topnav.responsive .services .servicesbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  topnav a:not(:first-child), .products .services .productsbtn .servicesbtn {
+    display: none;
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .products {float: none;}
+  .topnav.responsive .products-content {position: relative;}
+  .topnav.responsive .products .productsbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive .services {float: none;}
+  .topnav.responsive .services-content {position: relative;}
+  .topnav.responsive .services .servicesbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+<body>
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="topnav">
+  <a href="index.html" class="active">Home</a>
+  <a href="aboutus.html">About Us</a>
+<div class="products">
+    <button class="productsbtn">Products 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="products-content">
+      <a href="books.html">Books</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="charts.html">Charts</a>
+      <a href="otherproducts.html">Other Products</a>
+      <a href="newproducts.html">New Products</a>
+    </div>
+  </div> 
+  <div class="services">
+    <button class="servicesbtn">Services 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="services-content">
+      <a href="consultations.html">Consultations</a>
+      <a href="gotoguide.html">Go to Guide</a>
+      <a href="recommendations.html">Recommendations</a>
+    </div>
+  </div> 
+  <a href="contactus.html">Contact Us</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div class="banner">
+ <img src="images/banner.jpg" alt="banner" height="250px" width="100%">
+  <div class="centered"><h1>The Learning Bags &copy</h1></div>
+</div>
+
+<div style="padding:9px;"> 
+
+<div class="row">
+  <div class="leftcolumn">
+   <div class="card">
+      <h1>Learning is Fun</h1>
+      <h3>Let's learn how to educate in fun ways as everyday is a new learning experience.</h3>
+  <br>
+<video width="80%" height="225px" controls muted>
+    <source src="videos/days.mp4" type=video/mp4>
+    <source src="video.ogg" type=video/ogg>
+    <source src="video.webm" type=video/webm>
+    Your browser does not support the video tag.
+
+  </video>
+  </div>
+  </div>
+ <div class="rightcolumn">
+   <div class="card">
+     <h1>Let's Learn Together!</h1>
+  <section><p>At The Learning Bags, we pride ourselves in being unique, crafty and creative in developing learning materials for your little ones.</p>
+     <p>We customise items to meet your requirements.</p>
+  </section>
+    <p>Every child can learn and will learn once given the right opportunities.</p>
+   <hr class="dashed">
+<br>
+<p>Learning comes in many different forms.</p>
+<div class="container">
+<div class="gallery">
+  <a target="_blank" href="https://study.com/academy/lesson/visual-learning-style-definition-characteristics.html">
+   <img src="images/visual.jpg" alt="no image" height="60%" width="60%">
+   <div class="p">visual</a></div>
+</div>
+<div class="gallery">
+<a target="_blank" href="https://www.yourtherapysource.com/blog1/2022/09/10/kinesthetic-learners/">
+   <img src="images/kinesthetic.jpg" alt="no image" height="60%" width=60%">
+<div class="p">kinesthetic</a></div>
+</div>
+<div class="gallery">
+<a target="_blank" href="https://www.time4learning.com/learning-styles/auditory-aural.html">
+   <img src="images/auditory.jpg" alt="no image" height="65%" width="65%">
+<div class="p">auditory</a></div>
+</div>
+<div class="gallery">
+   <a target="_blank" href="https://www.learning-styles-online.com/style/social-interpersonal/">
+   <img src="images/social.jpg" alt="no image" height="70%" width="70%">
+<div class="p">social</a></div>
+</div>
+   <div class="gallery">
+<a target="_blank" href="https://blog.bjupress.com/blog/2022/09/07/solitary-learner-characteristics-study-tips-strategies-and-activities/">
+   <img src="images/solitary.jpg" alt="no image" height="60%" width="60%">
+<div class="p">solitary</a></div>
+</div>
+   <div class="gallery">
+<a target="_blank" href="https://study.com/academy/lesson/verbal-linguistic-learning-style-characteristics-strategies.html">
+   <img src="images/verbal.jpg" alt="no image" height="60%" width="60%">
+<div class="p">verbal</a></div>
+</div>
+<div class="gallery">
+   <a target="_blank" href="https://bohringer.com/our-thoughts/learning-styles.html">
+  <img src="images/logical.jpg" alt="no image" height="60%" width="65%">
+<div class="p">logical</a></div>
+</div>
+</div>
+
+<a href="https://www.avadolearning.com/blog/the-7-different-learning-styles-and-what-they-mean/" target="_blank">Reference Article</a>
+<div><p>Our products focuses on these varied learning areas to engage your child holistically.</p>
+  </div>
+ </div>
+  </div>
+</div>
+
+<div class="footer">
+<h4>&copy;&nbsp; The Learning Bags &nbsp; &nbsp; <img src="images/logo.jpg" alt="logoimage" width="35px" height:"35px;"> &nbsp; &nbsp; All Rights Reserved &nbsp; &nbsp;
+</h4>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>
