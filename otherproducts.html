@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<title>The Learning Bags</title>
+    <meta charset="UFT-8">
+    <meta name="description" content="thelearningbags">
+    <meta name="keywords" content="learning">
+    <meta name="author" content="ThoraBastaldo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;  border-radius: 5px;
+}
+
+body {margin:10px;
+      font-family:"Segoe Print", "Century Gothic"; 
+      background-color:#9bf6ff;}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(11, 134, 191);
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.active1 {
+  background-color: white;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/*Style the dropdown menu buttons */
+.products {
+  float: left;
+  overflow: hidden;
+}
+
+.products .productsbtn {
+  font-size: 22px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.products-content {
+  display: none;
+  position: absolute;
+  background-color: #caffbf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(122, 171, 196, 0.3);
+  z-index: 1;
+}
+
+.products-content a {
+  float: none;
+  color:  black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .products:hover .productsbtn {
+  background-color:  #9bf6ff;
+  color: black;
+}
+
+.products-content a:hover {
+  background-color: green;
+  color: black;
+}
+
+.products:hover .products-content {
+  display: block;
+}
+
+.services {
+  float: left;
+  overflow: hidden;
+}
+
+.services .servicesbtn {
+  font-size: 22px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.services-content {
+  display: none;
+  position: absolute;
+  background-color: #fdffb6;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(122, 171, 196, 0.3);
+  z-index: 1;
+}
+
+.services-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .services:hover .servicesbtn {
+  background-color: #9bf6ff;
+  color: black;
+}
+
+.services-content a:hover {
+  background-color: gold;
+  color:  black;
+}
+
+.services:hover .services-content {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.centered {
+  position: absolute;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Create a column */
+.column1 {   
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-color: #caffbf;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  height: 95%;
+}
+
+/* Clear floats after the column */
+.row1::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color:  #caffbf;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #caffbf;
+}
+
+.btn.active {
+  background-color: green;
+  color: white;
+}
+
+div.absolute {
+  position: absolute;
+  top: 400px;
+  right: 3%;
+  width: 200px;
+  border: none;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #0b86bf;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+  topnav a:not(:first-child), .products .services .productsbtn .servicesbtn {
+    display: none;
+  .topnav a.icon {
+    float: none;
+    width: 100%;
+  }
+}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .products {float: none;}
+  .topnav.responsive .products-content {position: relative;}
+  .topnav.responsive .products .productsbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive .services {float: none;}
+  .topnav.responsive .services-content {position: relative;}
+  .topnav.responsive .services .servicesbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  topnav a:not(:first-child), .products .services .productsbtn .servicesbtn {
+    display: none;
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .products {float: none;}
+  .topnav.responsive .products-content {position: relative;}
+  .topnav.responsive .products .productsbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive .services {float: none;}
+  .topnav.responsive .services-content {position: relative;}
+  .topnav.responsive .services .servicesbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+<body>
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="aboutus.html">About Us</a>
+<div class="products">
+    <button class="productsbtn" style="background:white">Products 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="products-content">
+      <a href="books.html">Books</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="charts.html">Charts</a>
+      <a href="otherproducts.html" class="active1">Other Products</a>
+      <a href="newproducts.html">New Products</a>
+    </div>
+  </div> 
+  <div class="services">
+    <button class="servicesbtn">Services 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="services-content">
+      <a href="consultations.html">Consultations</a>
+      <a href="gotoguide.html">Go to Guide</a>
+      <a href="recommendations.html">Recommendations</a>
+    </div>
+  </div> 
+  <a href="contactus.html">Contact Us</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div class="banner">
+ <img src="images/banner.jpg" alt="banner" height="250px" width="100%">
+  <div class="centered"><h1>The Learning Bags &copy</h1></div>
+</div>
+
+<div style="padding:9px;">
+<div class="row1">
+<div class="column1">
+<div class="card">
+
+<!-- MAIN (Center website) -->
+<div class="main">
+<h2>Our Other Products</h2>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('learning')"> Learning</button>
+  <button class="btn" onclick="filterSelection('crochet')"> Crochet</button>
+  <button class="btn" onclick="filterSelection('kidswear')"> Kidswear</button>
+  <button class="btn" onclick="filterSelection('other')"> Other</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column learning">
+    <div class="content">
+      <img src="images/clock.jpg" alt="Clock" width="100%" height="100%" class="responsive">
+      <h3>Clock</h3>
+    </div>
+  </div>
+  <div class="column learning">
+    <div class="content">
+    <img src="images/feltboard.jpg" alt="Storyboard" width="100%" height="100%" class="responsive">
+      <h3>Storyboard</h3>
+    </div>
+  </div>
+  <div class="column learning">
+    <div class="content">
+    <img src="images/shoes.jpg" alt="Shoes" width="100%" height="100%" class="responsive">
+      <h3>Shoes</h3>
+    </div>
+   </div>
+  <div class="column learning">
+    <div class="content">
+    <img src="images/colourscone.png" alt="colourscone" width="100%" height="100%" class="responsive">
+      <h3>Colours Cone</h3>
+    </div>
+   </div>
+
+   <div class="column crochet">
+    <div class="content">
+      <img src="images/sandwich.jpg" alt="Sandwich" width="100%" height="100%" class="responsive">
+      <h3>Sandwich</h3>
+    </div>
+  </div>
+  <div class="column crochet">
+    <div class="content">
+    <img src="images/crochetfriends.jpg" alt="Friends" width="100%" height="100%" class="responsive">
+      <h3>Crochet friends</h3>
+    </div>
+  </div>
+  <div class="column crochet">
+    <div class="content">
+    <img src="images/crochetcone.jpg" alt="stacking cone" width="100%" height="100%" class="responsive">
+      <h3>Crochet cone</h3>
+    </div>
+  </div>
+  <div class="column crochet">
+    <div class="content">
+    <img src="images/embroidery.png" alt="embroidery" width="100%" height="100%" class="responsive">
+      <h3>Embroidery</h3>
+    </div>
+  </div>
+
+  <div class="column kidswear">
+    <div class="content">
+      <img src="images/green.png" alt="Dress" width="100%" height="100%" class="responsive">
+      <h3>African Dress</h3>
+    </div>
+  </div>
+  <div class="column kidswear">
+    <div class="content">
+    <img src="images/dress.png" alt="dress" width="100%" height="100%" class="responsive">
+      <h3>Dress</h3>
+    </div>
+  </div>
+  <div class="column kidswear">
+    <div class="content">
+    <img src="images/jacket.png" alt="jacket" width="100%" height="100%" class="responsive">
+      <h3>Jacket</h3>
+    </div>
+  </div>
+  <div class="column kidswear">
+    <div class="content">
+    <img src="images/pants.png" alt="pants" width="100%" height="100%" class="responsive">
+      <h3>Pants</h3>
+    </div>
+ </div>
+
+  <div class="column other">
+    <div class="content">
+      <img src="images/doll.jpg" alt="Doll" width="100%" height="100%" class="responsive">
+      <h3>Doll</h3>
+    </div>
+  </div>
+  <div class="column other">
+    <div class="content">
+    <img src="images/watercycle.jpg" alt="the watercycle" width="100%" height="100%" class="responsive">
+      <h3>Watercycle</h3>
+    </div>
+  </div>
+  <div class="column other">
+    <div class="content">
+    <img src="images/photoframe.jpg" alt="Easter" width="100%" height="100%" class="responsive">
+      <h3>Photoframe</h3>
+    </div>
+  </div>
+  <div class="column other">
+    <div class="content">
+    <img src="images/bag.png" alt="bag" width="100%" height="100%" class="responsive">
+      <h3>Bag</h3>
+    </div>
+ </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<div class="absolute">
+<p><a href="docs/contents.pdf">All Products and Description</a></p>
+</div>
+</div> 
+</div>
+</div> 
+
+<div class="footer">
+<h4>&copy;&nbsp; The Learning Bags &nbsp; &nbsp; 
+<img src="images/logo.jpg" alt="logoimage" width="35px" height:"35px;"> 
+&nbsp; &nbsp; All Rights Reserved &nbsp; &nbsp;
+</h4>
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active", "");
+    this.className += " active";
+  });
+}
+
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+</script>
+
+</body>
+</html>
