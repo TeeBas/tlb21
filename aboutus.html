@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<title>The Learning Bags</title>
+    <link rel="shortcut icon" type="images/ico" href="images/favicon1.ico">
+    <meta charset="UFT-8">
+    <meta name="description" content="thelearningbags">
+    <meta name="keywords" content="learning">
+    <meta name="author" content="ThoraBastaldo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;  border-radius: 5px;
+}
+
+body {margin:10px;
+      font-family:"Segoe Print", "Century Gothic"; 
+      background-color:#9bf6ff;}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(11, 134, 191);
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.active {
+  background-color: white;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/*Style the dropdown menu buttons */
+.products {
+  float: left;
+  overflow: hidden;
+}
+
+.products .productsbtn {
+  font-size: 22px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.products-content {
+  display: none;
+  position: absolute;
+  background-color: #caffbf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(122, 171, 196, 0.3);
+  z-index: 1;
+}
+
+.products-content a {
+  float: none;
+  color:  black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .products:hover .productsbtn {
+  background-color:  #9bf6ff;
+  color: black;
+}
+
+.products-content a:hover {
+  background-color: blue;
+  color: black;
+}
+
+.products:hover .products-content {
+  display: block;
+}
+
+.services {
+  float: left;
+  overflow: hidden;
+}
+
+.services .servicesbtn {
+  font-size: 22px;    
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.services-content {
+  display: none;
+  position: absolute;
+  background-color: #fdffb6;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(122, 171, 196, 0.3);
+  z-index: 1;
+}
+
+.services-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .services:hover .servicesbtn {
+  background-color: #9bf6ff;
+  color: black;
+}
+
+.services-content a:hover {
+  background-color: gold;
+  color:  black;
+}
+
+.services:hover .services-content {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.centered {
+  position: absolute;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Create two equal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: #472d30;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 50%;
+  height:100%;
+  text-align: center;
+  background-color: #78290f;
+  padding: 5px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: tan;
+  padding: 20px;
+  margin: 10px;
+  style:height: 900px;
+}
+
+/* Add a card effect for articles */
+.card1 {
+  background-color: tan;
+  padding: 20px;
+  margin: 10px;
+  style:height: 900px;
+}
+
+/* Dotted border */
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #0b86bf;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+  topnav a:not(:first-child), .products .services .productsbtn .servicesbtn {
+    display: none;
+  .topnav a.icon {
+    float: none;
+    width: 100%;
+  }
+}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .products {float: none;}
+  .topnav.responsive .products-content {position: relative;}
+  .topnav.responsive .products .productsbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive .services {float: none;}
+  .topnav.responsive .services-content {position: relative;}
+  .topnav.responsive .services .servicesbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  topnav a:not(:first-child), .products .services .productsbtn .servicesbtn {
+    display: none;
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .products {float: none;}
+  .topnav.responsive .products-content {position: relative;}
+  .topnav.responsive .products .productsbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .topnav.responsive .services {float: none;}
+  .topnav.responsive .services-content {position: relative;}
+  .topnav.responsive .services .servicesbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="aboutus.html" class="active">About Us</a>
+<div class="products">
+    <button class="productsbtn">Products 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="products-content">
+      <a href="books.html">Books</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="charts.html">Charts</a>
+      <a href="otherproducts.html">Other Products</a>
+      <a href="newproducts.html">New Products</a>
+     </div>
+  </div> 
+  <div class="services">
+    <button class="servicesbtn">Services 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="services-content">
+      <a href="consultations.html">Consultations</a>
+      <a href="gotoguide.html">Go to Guide</a>
+      <a href="recommendations.html">Recommendations</a>
+    </div>
+  </div> 
+  <a href="contactus.html">Contact Us</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div class="banner">
+ <img src="images/banner.jpg" alt="banner" height="250px" width="100%">
+  <div class="centered"><h1>The Learning Bags &copy</h1></div>
+</div>
+
+<div style="padding:9px;"> 
+
+<h1><p align="center">About Us</p></h1>
+
+<div class="row">
+ <div class="leftcolumn">
+ <div class="card">
+   <p><h1>Who We Are</h1></p>
+ <h3><img src="images/meinpink.jpg" height="20%" width="20%"><br>Owner and Founder</h3>
+<p> I am Thora Bastaldo, the owner and founder of The Learning Bags.<br> I always liked learning products and materials for younger students, 
+whether I purchase them or make them myself. 
+<br>I am very creative and like developing and making new items to aid others in the learning process from a tender age.</p>
+</div>
+   <hr class="dotted">
+<div class="card">
+   <h1>Our Story</h1>
+    <h2>How it all began</h2>
+    <p>In the early months of the pandemic, I saw the need arising for learning materials for children to be used at home, as schools were closed, 
+   and a lot of persons did not have access to their own resources. 
+<br>After seeing other products on the market, I decided to start up my own, unique collection of learning materials,
+  that could be used at home and on the go.</p>
+</div>
+</div>
+
+<div class="rightcolumn">
+ <div class="card1">
+   <p><h1>Mission</h1></p>
+    <h2>Our plans</h2>
+   <p>We aim to have every child being able to access and benefit from our custom designed products and materials.
+ <br>
+Equiping parents, guardians and even teachers alike, with ideas to make the initial learning stages less stressful 
+and more fun for everyone involved is also one of our main goals.</p>  
+  </div>
+<hr class="dotted">
+<div class="card1">
+<p><h1>Vision</h1></p>
+ <h3><img src="images/meglowing.jpg" alt="Vision" width="20%" height="20%"><br></h3>
+  <p>In the future, we see our products being manufactured on a much larger scale, being supplied to stores, 
+and eventually the international market.
+<br>We see ourself being among one of the top suppliers of early learning products.</p>
+  </div>
+<div class="card1">
+<p><h2>Thus, The Learning Bags was born.</h2><p>
+ </div>
+</div>
+</div>
+
+<div class="footer">
+<h4>&copy;&nbsp; The Learning Bags &nbsp; &nbsp; <img src="images/logo.jpg" alt="logoimage" width="35px" height:"35px;"> &nbsp; &nbsp; All Rights Reserved &nbsp; &nbsp;
+</h4>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>
