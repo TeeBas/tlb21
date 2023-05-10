@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Join Us</title>
+    <link rel="shortcut icon" type="images/ico" href="images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="The Learning Bags Form">
+  <meta name="keywords" content="Learning, Forms">
+  <meta name="author" content="Thora Bastaldo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: boarder-box; sizing:5px;
+}
+
+input[type=text], select, textarea {
+  width: 95%;
+  padding: 12px;
+  boarder: 1px solid #cab;
+  boarder-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color:  #a1b2c3;
+  color: black;  padding: 12px 20px;
+  border: none;  border-raidus: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: lightblue;
+}
+
+.container { 
+  border-radius: 5px;
+  background-color: skyblue;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1>Join Our Group</h1>
+<p>We believe that every child is unique and special in their own way. 
+If you like working with your child to help them explore and navigate their way from a young age, we are here for you.</p>
+<br>
+<i><h2>Why choose us?</h2></i>
+<p>We are committed to assisting <u>every learner</u> individually, giving them <u>uniquely designed items</u> to help them in developing their skills.</p>
+
+<p>If you have noticed this in your child,:
+<ul>
+ <li>Making things with their hands</li>
+ <li>Extra neat colouring skills</li>
+ <li>Ability to use building blocks in a very creative way</li>
+</ul>
+we will help you harness these talents.
+</p>
+</br>
+
+<h2>Parental Consent Form</h2>
+<p>Please complete form with your information so we can arrange the best group and package for you and your child.</p>
+
+<div class="container">
+  <form action="/action_page.php">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Your First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="yourfirstname" placeholder="Your name..">
+    </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="lname">Your Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="yourlastname" placeholder="Your last name..">
+    </div>
+   <div class="row">
+   <div class="col-25">
+     <label for="fname">Child's First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="child'sfirstname" placeholder="Child's name..">
+    </div>
+   <div class="row">
+    <div class="col-25">
+      <label for="lname">Child's Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="child'slastname" placeholder="Child's last name..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="district">District</label>
+    </div>
+    <div class="col-75">
+      <select id="district" name="district">
+        <option value="Chaguanas">Central</option>
+        <option value="Port of Spain">North</option>
+        <option value="San Fernando">South</option>
+	<option value="Arima">East</option>
+	<option value="Diego Martin">West</option>
+      </select>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+    <label for="interests">Interests</label>
+    </div>
+    <div class="col-75">
+      <select id="Interests" name="Interests">
+        <option value="Building">Building</option>
+        <option value="Crafting">Crafting</option>
+        <option value="Sewing">Sewing</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="TellusMore">Tell us more</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="My child likes" placeholder="My child likes and is interested in..." style="height:200px"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
